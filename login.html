@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Holidayparks</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Login Form -->
+  <section class="login-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Handle form submission -->
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#loginForm').submit(function(event) {
+        event.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        // Perform login validation using SQLite database
+        $.ajax({
+          type: 'POST',
+          url: 'login.php', // This is the server-side script that handles the login process
+          data: { username: username, password: password },
+          success: function(response) {
+            if (response === 'success') {
+              // Redirect to the booking page
+              window.location.href = "booking.html";
+            } else {
+              // Display an error message for login failure
+              alert("Invalid username or password. Please try again.");
+            }
+          },
+          error: function() {
+            // Display an error message if there was a problem with the login process
+            alert("An error occurred during login. Please try again later.");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

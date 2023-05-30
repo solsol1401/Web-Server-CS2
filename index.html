@@ -40,7 +40,7 @@
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">booking</a>
+                        <a href="booking.html" target="_blank">Booking</a>
                     </li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activities<span class="caret"></span></a>
@@ -189,6 +189,16 @@
     <!-- Custom Javascript -->
     <script src="js/custom.js"></script>
 
+    <!-- Open booking page in a new tab/window --
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var bookingButton = document.querySelector("a[href='booking.html']");
+            bookingButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                window.open("booking.html", "_blank");
+            });
+        });
+    </script> -->
 </body>
 
 </html>
