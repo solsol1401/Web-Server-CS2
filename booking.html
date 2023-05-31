@@ -20,7 +20,89 @@
       </div>
     </div>
   </header>
+  
+  <!-- Booking forms -->
+  <section class="booking">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Restaurant Booking</h2>
+          <form id="restaurantBookingForm" method="POST" action="restaurant_booking.php">
+            <!-- Restaurant booking form fields -->
+            <div class="form-group">
+              <label for="restaurantDate">Date:</label>
+              <input type="date" class="form-control" id="restaurantDate" name="restaurantDate" required>
+            </div>
+            <div class="form-group">
+              <label for="restaurantTime">Time:</label>
+              <input type="time" class="form-control" id="restaurantTime" name="restaurantTime" required>
+            </div>
+            <!-- Additional fields for restaurant booking -->
+            <!-- ... -->
 
+            <button type="submit" class="btn btn-primary">Book Restaurant</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2>Bowling Alley Booking</h2>
+          <form id="bowlingBookingForm" method="POST">
+            <!-- Bowling alley booking form fields -->
+            <div class="form-group">
+              <label for="bowlingDate">Date:</label>
+              <input type="date" class="form-control" id="bowlingDate" name="bowlingDate" required>
+            </div>
+            <div class="form-group">
+              <label for="bowlingTime">Time:</label>
+              <input type="time" class="form-control" id="bowlingTime" name="bowlingTime" required>
+            </div>
+            <!-- Additional fields for bowling booking -->
+            <!-- ... -->
+
+            <button type="submit" class="btn btn-primary">Book Bowling Alley</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Bicycle Booking</h2>
+          <form id="bicycleBookingForm" method="POST">
+            <!-- Bicycle booking form fields -->
+            <div class="form-group">
+              <label for="bicycleDate">Date:</label>
+              <input type="date" class="form-control" id="bicycleDate" name="bicycleDate" required>
+            </div>
+            <div class="form-group">
+              <label for="bicycleTime">Time:</label>
+              <input type="time" class="form-control" id="bicycleTime" name="bicycleTime" required>
+            </div>
+            <!-- Additional fields for bicycle booking -->
+            <!-- ... -->
+
+            <button type="submit" class="btn btn-primary">Book Bicycle</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2>Other Facilities Booking</h2>
+          <form id="facilitiesBookingForm" method="POST">
+            <!-- Other facilities booking form fields -->
+            <div class="form-group">
+              <label for="facilitiesDate">Date:</label>
+              <input type="date" class="form-control" id="facilitiesDate" name="facilitiesDate" required>
+            </div>
+            <div class="form-group">
+              <label for="facilitiesTime">Time:</label>
+              <input type="time" class="form-control" id="facilitiesTime" name="facilitiesTime" required>
+            </div>
+            <!-- Additional fields for facilities booking -->
+            <!-- ... -->
+
+            <button type="submit" class="btn btn-primary">Book Facilities</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Login and Register Buttons -->
   <section class="button-section">
     <div class="container">
@@ -33,8 +115,7 @@
     </div>
   </section>
 
-  <!-- Existing code -->
-
+ 
   <!-- Handle form submission and open login/register page -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script>

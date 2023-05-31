@@ -23,9 +23,11 @@ p {
 }
 
 header {
-    position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: auto;
+    height: 100vh;
     text-align: center;
     color: #fff;
     background-image: url('../images/camp2.jpg');
@@ -34,6 +36,7 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    z-index: 1;
 }
 
 header .header-content {
@@ -429,3 +432,42 @@ img::-moz-selection {
 .bg-primary {
     background-color: yellowgreen;
 }
+
+/* Styles for the booking section */
+.booking {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px 0;
+    margin-top: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.booking h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+.booking .form-group {
+    margin-bottom: 20px;
+}
+  
+.booking button[type="submit"] {
+    margin-top: 10px;
+}
+  
+/* Styles for the button section */
+.button-section {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+    text-align: center;
+}
+  
+.button-section .btn {
+    margin-right: 10px;
+}
+  
+.button-section .btn:last-child {
+    margin-right: 0;
+}
+  

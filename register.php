@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $db = new SQLite3("users.db");
 
   // Create a prepared statement to insert the user data into the database
-  $statement = $db->prepare("INSERT INTO users (name, username, password) VALUES (:name, :username, :password)");
+  $statement = $db->prepare("INSERT INTO users (Name, username, password) VALUES (:name, :username, :password)");
   $statement->bindValue(":name", $name);
   $statement->bindValue(":username", $username);
   $statement->bindValue(":password", $password);
