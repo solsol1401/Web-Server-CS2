@@ -1,40 +1,36 @@
 <?php
-// Check if the request method is POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Get the form data
-  $name = $_POST["name"];
-  $username = $_POST["regUsername"];
-  $password = $_POST["regPassword"];
+// SQLite database file
+$databaseFile = 'users.db';
 
-  // Validate the form data (you can add additional validation if needed)
-  if (empty($name) || empty($username) || empty($password)) {
-    // Return an error response if any field is empty
-    echo "error";
-    exit;
-  }
+// Create a new SQLite database connection
+$db = new SQLite3($databaseFile);
 
-  // Connect to the SQLite database
-  $db = new SQLite3("users.db");
+// Process the registration form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  // Create a prepared statement to insert the user data into the database
-  $statement = $db->prepare("INSERT INTO users (Name, username, password) VALUES (:name, :username, :password)");
-  $statement->bindValue(":name", $name);
-  $statement->bindValue(":username", $username);
-  $statement->bindValue(":password", $password);
+    // Insert the user into the database
+    $insertQuery = "INSERT INTO users (name, username, password) VALUES (:name, :username, :password)";
+    $statement = $db->prepare($insertQuery);
+    $statement->bindValue(':name', $name);
+    $statement->bindValue(':username', $username);
+    $statement->bindValue(':password', $password);
 
-  // Execute the prepared statement
-  $result = $statement->execute();
 
-  // Check if the insertion was successful
-  if ($result) {
+    // Check if the insertion was successful
+    if ($statement->execute()) {
     // Return a success response
     echo "success";
-  } else {
+    } else {
     // Return an error response
     echo "error";
-  }
 
-  // Close the database connection
-  $db->close();
+  }
 }
+     
+// Close the database connection
+$db->close();
 ?>
