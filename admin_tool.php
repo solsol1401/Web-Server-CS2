@@ -11,7 +11,7 @@ if (!isset($_SESSION["admin_logged_in"]) || $_SESSION["admin_logged_in"] !== tru
 // Fetch and display bookings
 
 function displayBookings($dbName, $header) {
-    echo "Trying to open database at: " . realpath($dbName) . "<br>"; //Check the path
+    //echo "Trying to open database at: " . realpath($dbName) . "<br>"; //Check the path
     $db = new SQLite3($dbName);
     $results = $db->query("SELECT * FROM bookings");
 
