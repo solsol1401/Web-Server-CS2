@@ -48,14 +48,14 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 20px;
     font-size: 50px;
     font-weight: 300;
-    color:#333;
+    color:#ddd;
 }
 
 header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 300;
-    color: #333;
+    color: #ddd;
 }
 
 @media(min-width:768px) {
