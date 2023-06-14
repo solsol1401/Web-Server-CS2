@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking - Holidayparks</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+        <h1>Booking</h1>
+        <p>Select your desired items and proceed with the booking process.</p>
+      </div>
+
+      <div class="form-container">
+        <h2>Bicycle Booking</h2>
+        <form id="bicycleBookingForm" method="POST" action="bicycle.php">
+          <!-- Bicycle booking form fields -->
+          <div class="form-group">
+            <label for="bicycleDate">Date:</label>
+            <input type="date" class="form-control" id="bicycleDate" name="bicycleDate" required>
+          </div>
+          <div class="form-group">
+            <label for="bicycleTime">Time:</label>
+            <input type="time" class="form-control" id="bicycleTime" name="bicycleTime" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Book Bicycle</button>
+        </form>
+      </div>
+
+      <div class="button-section">
+        <button class="btn btn-primary" onclick="window.location.href='restaurant.html'">Book Restaurant</button>
+        <button class="btn btn-primary" onclick="window.location.href='bowling.html'">Book Bowling Alley</button>
+        <button class="btn btn-primary" onclick="window.location.href='facilities.html'">Book Other Facilities</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Include jQuery library -->
+  <script src="../js/jquery-1.11.3.min.js"></script>
+
+  <!-- Handle submission -->
+  <script>
+    $(document).ready(function() {
+      $("#bicycleBookingForm").submit(function(event) {
+        event.preventDefault();
+
+        var formData = $(this).serialize();
+
+        $.ajax({
+          type: "POST",
+          url: "bicycles.php",
+          data: formData,
+          success: function(response) {
+            alert(response);
+          },
+          error: function() {
+            alert("An error occurred. Please try again later.");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

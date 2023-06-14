@@ -1,4 +1,7 @@
 <?php
+// Start the session
+session_start();
+
 // SQLite database file
 $databaseFile = 'users.db';
 
@@ -19,18 +22,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindValue(':username', $username);
     $statement->bindValue(':password', $password);
 
-
     // Check if the insertion was successful
     if ($statement->execute()) {
-    // Return a success response
-    echo "success";
-    } else {
-    // Return an error response
-    echo "error";
+        // Store the name in a session variable
+        $_SESSION['name'] = $name;
 
-  }
+        // Return a success response
+        echo "success";
+    } else {
+        // Return an error response
+        echo "error";
+    }
 }
-     
+
 // Close the database connection
 $db->close();
 ?>
