@@ -28,7 +28,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #333;
-    background-image: url('../images/camp2.jpg');
+    background-image: url('../images/campbackground.jpg');
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -52,7 +52,7 @@ header .header-content .header-content-inner h1 {
 }
 
 header .header-content .header-content-inner p {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     font-size: 16px;
     font-weight: 300;
     color: #ddd;
@@ -133,11 +133,6 @@ header .header-content .header-content-inner p {
     text-align: center;
 }
 
-.promo-item:hover {
-    background-size: 110%; 
-    border: 10px solid rgba(255,255,255,0.3);
-    line-height: 160px;
-}
 
 .promo-item h3 {
     font-size: 40px;
@@ -146,7 +141,7 @@ header .header-content .header-content-inner p {
 }
 
 .item-1 {
-	background: url('../images/volleyball1.jpg');
+	background: url('../images/volleyball.jpg');
 	}
 	
 .item-2 {
@@ -154,7 +149,7 @@ header .header-content .header-content-inner p {
 	}
 	
 .item-3 {
-	background: url('../images/pool.jpg');
+	background: url('../images/swimpool.jpg');
 	}
 		
 .item-1,
@@ -235,7 +230,11 @@ header .header-content .header-content-inner p {
 @media(min-width:768px) {
     .navbar-default {
         border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        background-color: white;
+        
+        min-height: 100px; 
+        margin-bottom: 20px; 
+        border: 1pxx solid transparent; 
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -250,12 +249,13 @@ header .header-content .header-content-inner p {
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: rgba(0, 0, 0, 0.7);
+        
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: #fff;
+        color: yellowgreen;
     }
 
     .navbar-default.affix {
@@ -282,6 +282,13 @@ header .header-content .header-content-inner p {
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
         color: yellowgreen;
+    }
+    
+    .navbar-nav>li>a {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
     }
 }
 
@@ -448,4 +455,4 @@ img::-moz-selection {
   .form-container input {
     color: #333; /* dark gray */
   }
-    
+  
